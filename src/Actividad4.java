@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 
 public class Actividad4 {
     static boolean esCurp(String curp){
-        Pattern pat = Pattern.compile("[A-Z][AEIOU][A-Z]{2}[0-9]{6}[HM][A-Z]{2}[A-Z[^AEIOU]]{3}[0-9|A-Z][0-9]");
+        Pattern pat = Pattern.compile("[A-Z][AEIOU][A-Z]{2}[0-9]{6}[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[A-Z[^AEIOU]]{3}[0-9|A-Z][0-9]");
         Matcher mat = pat.matcher(curp);
         return mat.matches();
     }
